@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+    body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1062b9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#container {
+  width: auto;
+  width: 90vmin;
+  border: 3px solid white;
+  border-radius: 5px;
+  box-shadow: 0 0 300px #333;
+}
+  </style>
+</head>
+<body>
+<div id="container">
+  <div id="player-container"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/indigo-player@1/lib/indigo-player.js"></script>
+<script type="text/javascript">
+const videoUrl = 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4';
+
+const config = {
+  sources: [{
+    type: 'mp4',
+    src: videoUrl,
+  }]
+};
+
+const element = document.getElementById('player-container');
+const player = IndigoPlayer.init(element, config);
+</script>
+</body>
+</html>
